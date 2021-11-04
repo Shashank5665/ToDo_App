@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const routerHome = require("./routes/homeRoute");
 const mongoose = require("mongoose");
-const DB = " ";
+const db_link = require("./.env");
+const DB = db_link;
 //-------------------------------------------------------------------------------------------
 // MIDDLEWARES
 app.set("view engine", "ejs");

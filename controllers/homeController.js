@@ -20,7 +20,11 @@ exports.getHomeTasks = async (req, res) => {
 //POST request
 exports.postHomeTasks = async (req, res) => {
   item = await req.body.newItem;
-  await homeItem.create({ name: item });
+  if (item !== null && item !== "") {
+    await homeItem.create({ name: item });
+  } else {
+    console.log("item is empty");
+  }
   res.redirect("/");
 };
 //-----------------------------------------------------------------------------------
